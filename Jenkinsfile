@@ -45,4 +45,9 @@ pipeline {
             }
         }
     }
+
+    post { 
+        always 
+        { sh ''' docker logout docker image prune -af || true ''' } 
+    }
 }
